@@ -1,0 +1,78 @@
+# Blog And Portfolio ✨
+
+This repo is my Portfolio which is built using React, Django, and GraphQL.A Portfolio will provide a platform to showcase our blogs and the latest work that we had done
+
+If you want to understand this repo better and use it follow the steps mentioned below
+
+This repo has divided into two branches for making deployment in Heroku from Github
+1. [Frontend](#Frontend)
+2. [Backend](#Backend)
+
+The First step is to fork the repo and get it in your Github repositories and then clone the repo to your local environment.
+
+And then create Heroku apps for deploying so that you can add your URLs to the code by following the steps mentioned 
+
+## Frontend ⚛️
+
+<img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" alt="alt text" width="175px" height="175px">
+
+### Setup
+
+1. First clone the Frontend branch from the repo
+    > `git clone https://github.com/brtuynk/Frontend.git`
+
+2. Install all the npm packages
+    > `npm install`
+
+3. Run the code
+    > `npm start`
+
+### Changes 📝
+
+Changes that need to be made for getting your data on the website are:
+
+1. Change the home.png and about.jpeg in the public/assets folder with the images you want to show in the landing page of the portfolio and change the names in the src of image tags in the Home.js and About.js if the naming is different
+
+2. Change the title of the page in the index.html in the public folder with your name
+
+    **From Components:**
+
+3. Change the about data in the About.js
+
+4. Change the Social Media links in the Home.js and Footer.js
+
+5. For the stats of Github change the username in the URLs in Stats.js
+
+6. Change all the URLs with your respective ones in
+    - BlogPage.js [Cover image]
+    - Blogs.js [fetch URLs]
+    - Projects.js [fetch URLs]
+    - useFetch.js [fetch URLs]
+
+7. Then push it to the Github frontend branch of the forked repo
+
+## Backend
+
+### Setup
+
+1. As done in the frontend part first clone the backend branch of the repo
+    > `git clone https://github.com/brtuynk/Backend.git`
+
+2. Create a virtual environment and Install the pip packages in the requiremets.txt
+    > `pip install -r requirements.txt`
+
+    In case you are using version 3 use pip3
+
+### Changes 📝
+
+1. Add your frontend URL to CORS_ALLOWED_ORIGINS on the settings page
+
+2. And add your backend URL in the ALLOWED_HOSTS on the settings page
+
+3. Then push to the backend branch of the repo
+
+## Note
+
+If you found this useful, then please consider giving it a 🌟 on Github and sharing it with your friends.<br>
+Happy Coding 💻
+# blog-frontend

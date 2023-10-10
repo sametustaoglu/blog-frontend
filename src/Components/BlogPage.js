@@ -7,7 +7,7 @@ function BlogPage() {
 
     const {blogpage,id,numberofblogs} = useFetch();
     const description = `${blogpage.body}`;
-    const coverimage = "http://localhost:8000/media/"+blogpage.coverImage;
+    const coverimage = "https://api.sametustaoglu.com/media/"+blogpage.coverImage;
 
     const history = useHistory();
     const prevPost = () => {

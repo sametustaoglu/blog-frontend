@@ -23,7 +23,7 @@ function Blogs() {
             body: JSON.stringify({query}),
         };
 
-         fetch('http://localhost:8000/graphql', sendingPost)
+         fetch('https://api.sametustaoglu.com/graphql', sendingPost)
             .then(response => response.json())
             .then(data => setBlogs(data.data.allPosts));
     },[query])
@@ -35,7 +35,7 @@ function Blogs() {
             {blogs.map((blog) =>
             <Link to={`blogs/${blog.id}`} style={{textDecoration:'none',color:'black'}}>
                 <BlogCard
-                    coverimage={"http://localhost:8000/media/"+blog.coverImage}
+                    coverimage={"https://api.sametustaoglu.com//media/"+blog.coverImage}
                     category={blog.category}
                     title={blog.title}
                     descriptionpart={blog.cardDescription}

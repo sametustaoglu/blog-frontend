@@ -22,7 +22,7 @@ function Projects() {
             body: JSON.stringify({query}),
         };
 
-         fetch('http://localhost:8000/graphql', sendingPost)
+         fetch('https://api.sametustaoglu.com/graphql', sendingPost)
             .then(response => response.json())
             .then(data => setProjects(data.data.allProjects));
     },[query])
@@ -34,7 +34,7 @@ function Projects() {
         {projects.map((project) =>
                 <ProjectCard
                     key={project.id}
-                    image={"http://localhost:8000/media/"+project.image}
+                    image={"https://api.sametustaoglu.com/media/"+project.image}
                     description={project.projectDescription}
                     codelink={project.codeLink}                />
             )}

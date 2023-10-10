@@ -19,7 +19,7 @@ And then create Heroku apps for deploying so that you can add your URLs to the c
 ### Setup
 
 1. First clone the Frontend branch from the repo
-    > `git clone https://github.com/brtuynk/Frontend.git`
+    > `git clone https://github.com/sametustaoglu/Frontend.git`
 
 2. Install all the npm packages
     > `npm install`
@@ -56,7 +56,7 @@ Changes that need to be made for getting your data on the website are:
 ### Setup
 
 1. As done in the frontend part first clone the backend branch of the repo
-    > `git clone https://github.com/brtuynk/Backend.git`
+    > `git clone https://github.com/sametustaoglu/Backend.git`
 
 2. Create a virtual environment and Install the pip packages in the requiremets.txt
     > `pip install -r requirements.txt`

@@ -35,10 +35,10 @@ const useFetch = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({query}),
         };
-        fetch('http://localhost:8000/graphql', sendingPost)
+        fetch('https://api.sametustaoglu.com/graphql', sendingPost)
             .then(response => response.json())
             .then(data => setBlogpage(data.data.postById));
-        fetch('http://localhost:8000/graphql', sendingPost)
+        fetch('https://api.sametustaoglu.com/graphql', sendingPost)
             .then(response => response.json())
             .then(data => setBlogs(data.data.allPosts));
     },[id,query])

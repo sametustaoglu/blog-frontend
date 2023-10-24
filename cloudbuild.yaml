@@ -1,0 +1,39 @@
+options:
+  logging: CLOUD_LOGGING_ONLY
+  pool:
+    name: 'projects/api-project-526891365857/locations/europe-west1/workerPools/prod-private-pool'
+
+steps:
+
+  - name: 'gcr.io/kaniko-project/executor:latest'
+    args:
+      - '--context=.'
+      - '--dockerfile=./Dockerfile'
+      - '--destination=${_IMAGE_REPO}/${_IMAGE_NAME}:$COMMIT_SHA'
+      - '--destination=${_IMAGE_REPO}/${_IMAGE_NAME}:latest'
+      - '--cache=true'
+      - '--cache-ttl=3h'
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - ${_SERVICE_NAME}
+      - '--image=${_IMAGE_REPO}/${_IMAGE_NAME}:$COMMIT_SHA'
+      - '--region=${_REGION}'
+      - '--add-cloudsql-instances=api-project-526891365857:europe-west1:netzonedb'
+      - '--port=9000'
+      - '--cpu=4'
+      - '--memory=4G'
+      - '--min-instances=1'
+      - '--max-instances=30'
+      - '--allow-unauthenticated'
+      - '--vpc-connector=prod-connector'
+      - '--vpc-egress=private-ranges-only'
+      - '--execution-environment=gen2'
+
+substitutions:
+  _IMAGE_NAME: 'prod-101evler-web'
+  _IMAGE_REPO: 'europe-west1-docker.pkg.dev/api-project-526891365857/web'
+  _SERVICE_NAME: 'prod-101evler-web'
+  _REGION: 'europe-west1'

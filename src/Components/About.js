@@ -12,15 +12,7 @@ function About() {
         <div>
           <h2 className="about-subtitle">A little bit about myself... </h2>
           <p className="about-text">
-          With over 5 years of extensive experience as a DevOps Engineer and a Cloud Architect, 
-          a dynamic and result-oriented approach is brought to my work. I take pride in holding 
-          6 certifications in Cloud technologies and 3 certifications in Kubernetes, which showcase 
-          my expertise in these areas. Throughout my career, teams have been guided towards technical
-          excellence, and high-quality solutions have been delivered in both startup and large company 
-          environments. The focus has been on the implementation of DevSecOps practices for high-traffic 
-          productive services and the automation of the SDLC process. Responsibility is always embraced, 
-          with a continuous commitment to growing intellectual capital by seeking out diverse experiences 
-          and developing the career. A passionate belief is held that learning should be enjoyable as well.
+          Hi GLOBALIT
             </p>
           <p><b>Languages and tools known:</b> </p>
           <p>

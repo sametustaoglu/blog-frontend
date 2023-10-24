@@ -1,8 +1,8 @@
-# pull official base image
-FROM node:14.18.1-alpine3.14 as build
+# pull official base image 40 mb lık bir image
+FROM node:14.18.1-alpine3.14 as build  
 # set working directory
 WORKDIR /app
-LABEL tier="frontend"
+
 # add `/app/node_modules/.bin` to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
 
@@ -20,6 +20,7 @@ RUN npm run build
 # production environment
 FROM nginx:1.16.0-alpine
 COPY --from=build /app/build /usr/share/nginx/html/
+RUN chown -R nginx:nginx /usr/share/nginx/html/*
 COPY docker_resources/etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

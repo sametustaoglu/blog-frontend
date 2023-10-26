@@ -1,8 +1,0 @@
-version: "3.7"
-services:
-  website:
-    build: .
-    image: sametustaoglu/blog-frontend:v1.0
-    platform: linux/amd64
-    ports:
-      - "3000:80"
